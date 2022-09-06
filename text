@@ -1,0 +1,136 @@
+
+    <!-- Основной блок слайдера -->
+<div class="slider">
+  
+    <!-- Первый слайд -->
+    <div class="item">
+        <div class="slide-1">
+            <div class="slider1-menu-content">
+              <div class="smc-1">
+                <h2>Yeni Birbank kartları</h2>
+                <ul>
+                  <li>Pulsuz<p>Nağdlaşdır və köcür</p></li>
+                  <li>Hər yerdə<p>1.5-30% keşbek</p></li>
+                  <li>İkiqat<p>Ədv</p></li>
+                </ul>
+                <button>Ətraflı</button>
+              </div>
+              <div class="smc-2">
+               <img src="https://www.kapitalbank.az/images/slider/version_5/yeni-birbank-kartlari1656964647.png" alt="">
+              </div>
+             <div class="smc-3">
+               <i id="prev-1" class="fa-solid fa-angle-left"></i>
+               <i id="next-1" class="fa-solid fa-angle-right"></i>
+             </div>
+             </div>
+           </div>
+    </div>
+  
+    <!-- Второй слайд -->
+    <div class="item" >
+        <div class="slide-2" >
+            <div class="slider1-menu-content">
+              <div class="smc-1">
+                <h2>Yeni Birbank kartları</h2>
+                <ul>
+                  <li>Pulsuz<p>Nağdlaşdır və köcür</p></li>
+                  <li>Hər yerdə<p>1.5-30% keşbek</p></li>
+                  <li>İkiqat<p>Ədv</p></li>
+                </ul>
+                <button>Ətraflı</button>
+              </div>
+              <div class="smc-2">
+               <img src="https://www.kapitalbank.az/images/slider/version_48/ipoteka-krediti1655890221.png" alt="">
+              </div>
+             <div class="smc-3">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+             </div>
+             </div>
+           </div>
+    </div>
+  
+    <!-- Третий слайд -->
+    
+  
+    <!-- Кнопки-стрелочки -->
+    <a class="previous" onclick="previousSlide()">&#10094;</a>
+    <a class="next" onclick="nextSlide()">&#10095;</a>
+</div>
+<script>
+    /* Устанавливаем индекс слайда по умолчанию */
+let slideIndex = 1;
+showSlides(slideIndex);
+
+/* Увеличиваем индекс на 1 — показываем следующий слайд*/
+function nextSlide() {
+    showSlides(slideIndex += 1);
+    
+}
+
+/* Уменьшает индекс на 1 — показываем предыдущий слайд*/
+function previousSlide() {
+    showSlides(slideIndex -= 1);  
+}
+
+/* Устанавливаем текущий слайд */
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+/* Функция перелистывания */
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("item");
+    
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+  
+  /* Проходим по каждому слайду в цикле for */
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }   
+    slides[slideIndex - 1].style.display = "block"; 
+}
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="loading"></div>
+<button onclick="cli()">load</button>
+<script>
+    const loading = document.querySelector('.loading');
+const keyFrames = document.createElement("style");
+
+function cli(){
+
+keyFrames.innerHTML = `
+  @keyframes loading {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(270deg);
+    }
+  }
+
+  .loading {
+    animation: loading 1s ease infinite;
+  }
+`;
+
+} 
+loading.appendChild(keyFrames);
+</script>
